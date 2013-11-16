@@ -35,3 +35,4 @@ rm appbin-dir.directory appbin-sc.desktop
 rm -rf /$HOME/.appbin
 
 echo Done.
+read

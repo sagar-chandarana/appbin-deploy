@@ -1,6 +1,10 @@
+pkill appbin_daemon
+pkill appbin_7z
+pkill appbin_nw
+
 echo Moving files..
 mkdir -p /$HOME/.appbin
-mv appbin /$HOME/.appbin
+mv appbin/* /$HOME/.appbin
 
 echo Linking required libs..
 set -e
@@ -39,8 +43,8 @@ chmod +x -f /$HOME/.appbin/program_files/appbin
 chmod +x -f /$HOME/.appbin/program_files/appbin_nw
 chmod +x -f /$HOME/.appbin/program_files/nw
 chmod +x -f /$HOME/.appbin/program_files/appbin_daemon
-#chmod +x -f /$HOME/.appbin/program_files/bin/appbin_7za
-#chmod +x -f /$HOME/.appbin/program_files/uninstall
+chmod +x -f /$HOME/.appbin/program_files/bin/appbin_7za
+chmod +x -f /$HOME/.appbin/program_files/uninstall
 
 echo Starting Appbin..
 cd /$HOME/.appbin/program_files
