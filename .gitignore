@@ -1,1 +1,3 @@
 builds
+scripts/win/inno/output
+scripts/win/inno/files/appbin/program_files

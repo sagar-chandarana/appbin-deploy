@@ -2,7 +2,7 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 #define MyAppName "Appbin"
-#define MyAppVersion "0.90"
+#define MyAppVersion "1.0"
 #define MyAppPublisher "Appbin Labs Pvt. Lt."
 #define MyAppURL "http://www.getappbin.com/"
 #define MyAppExeName "appbin_nw.exe"
@@ -26,7 +26,7 @@ OutputBaseFilename=setup
 Compression=lzma
 SolidCompression=yes
 ;SourceDir="D:\DOCs\PersonalProjects\AppBin\Inno\0.02\files\appbin"
-SetupIconFile="D:\DOCs\PersonalProjects\AppBin\SyncingExp\gitRepo\inno\files\appbin\program_files\appbin.ico"
+SetupIconFile="D:\DOCs\PersonalProjects\AppBin\SyncingExp\gitRepo\appbin.ico"
 
 ;To do
 
@@ -51,10 +51,10 @@ Source: "Files\appbin\*.*"; DestDir: "{#dest}"; Flags: ignoreversion recursesubd
 Source: "Files\temp\*.*"; DestDir: "{%TEMP}"; Flags: ignoreversion
 
 [Icons]
-Name: "{userdesktop}\{#MyAppName}"; Filename: "{#prog}\{#MyAppExeName}";IconFilename: "{#prog}\appbin.ico";IconIndex: 0 ;WorkingDir: "{#prog}"; Parameters: "appbinnw --data-path=""{#dest}\data\default"""
-Name: "{userstartmenu}\{#MyAppName}"; Filename: "{#prog}\{#MyAppExeName}";IconFilename: "{#prog}\appbin.ico";IconIndex: 0 ;WorkingDir: "{#prog}"; Parameters: "appbinnw --data-path=""{#dest}\data\default"""
-Name: "{userappdata}\Microsoft\Internet Explorer\Quick Launch\User Pinned\TaskBar\{#MyAppName}"; Filename: "{#prog}\{#MyAppExeName}";IconFilename: "{#prog}\appbin.ico";IconIndex: 0 ;WorkingDir: "{#dest}\program_files"; Parameters: "appbinnw --data-path=""{#dest}\data\default"""
-Name: "{userappdata}\Microsoft\Internet Explorer\Quick Launch\{#MyAppName}"; Filename: "{#prog}\{#MyAppExeName}";IconFilename: "{#prog}\appbin.ico";IconIndex: 0 ;WorkingDir: "{#dest}\program_files"; Parameters: "appbinnw --data-path=""{#dest}\data\default"""
+Name: "{userdesktop}\{#MyAppName}"; Filename: "{#prog}\{#MyAppExeName}";IconFilename: "{#prog}\appbin_nw.exe";IconIndex: 0 ;WorkingDir: "{#prog}"; Parameters: "appbinnw --data-path=""{#dest}\data\default"""
+Name: "{userstartmenu}\{#MyAppName}"; Filename: "{#prog}\{#MyAppExeName}";IconFilename: "{#prog}\appbin_nw.exe";IconIndex: 0 ;WorkingDir: "{#prog}"; Parameters: "appbinnw --data-path=""{#dest}\data\default"""
+Name: "{userappdata}\Microsoft\Internet Explorer\Quick Launch\User Pinned\TaskBar\{#MyAppName}"; Filename: "{#prog}\{#MyAppExeName}";IconFilename: "{#prog}\appbin_nw.exe";IconIndex: 0 ;WorkingDir: "{#dest}\program_files"; Parameters: "appbinnw --data-path=""{#dest}\data\default"""
+Name: "{userappdata}\Microsoft\Internet Explorer\Quick Launch\{#MyAppName}"; Filename: "{#prog}\{#MyAppExeName}";IconFilename: "{#prog}\appbin_nw.exe";IconIndex: 0 ;WorkingDir: "{#dest}\program_files"; Parameters: "appbinnw --data-path=""{#dest}\data\default"""
 Name: "{userstartup}\Appbin Sync Daemon"; Filename:"{#prog}\appbin_daemon.exe";WorkingDir: "{#prog}"
  
 [Code]
