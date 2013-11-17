@@ -3,7 +3,7 @@
 
 #define MyAppName "Appbin"
 #define MyAppVersion "1.0"
-#define MyAppPublisher "Appbin Labs Pvt. Lt."
+#define MyAppPublisher "Appbin Labs Pvt. Ltd."
 #define MyAppURL "http://www.getappbin.com/"
 #define MyAppExeName "appbin_nw.exe"
 #define dest "{userappdata}\appbin"
