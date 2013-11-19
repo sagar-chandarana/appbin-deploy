@@ -3,8 +3,9 @@ pkill appbin_7z
 pkill appbin_nw
 
 echo Moving files..
-mkdir -p $HOME/.appbin
-mv appbin/* $HOME/.appbin
+rm -rf $HOME/.appbin/program_files
+mkdir -p $HOME/.appbin/program_files
+mv appbinpf/* $HOME/.appbin/program_files
 
 echo Linking required libs..
 set -e
