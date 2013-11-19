@@ -9,9 +9,9 @@ echo Deleting shortcuts..
 cat > ./appbin-sc.desktop << EOF
 [Desktop Entry]
 Name=Appbin
-Icon=/$HOME/.appbin/program_files/appbin.png
-Exec=/$HOME/.appbin/program_files/appbin
-Path=/$HOME/.appbin/program_files
+Icon=$HOME/.appbin/program_files/appbin.png
+Exec=$HOME/.appbin/program_files/appbin
+Path=$HOME/.appbin/program_files
 GenericName=Appbin - Sync Applications Seamlessly
 Type=Application
 EOF
@@ -20,19 +20,19 @@ cat > ./appbin-dir.directory << EOF
 [Desktop Entry]
 Version=1.0
 Name=Appbin
-Icon=/$HOME/.appbin/program_files/appbin.png
+Icon=$HOME/.appbin/program_files/appbin.png
 Type=Directory
 EOF
 
 xdg-desktop-menu uninstall appbin-dir.directory appbin-sc.desktop
 xdg-desktop-icon uninstall appbin-sc.desktop
-xdg-desktop-menu uninstall /$HOME/.appbin/program_files/lin_sc/appbin-dir.directory /$HOME/.appbin/program_files/lin_sc/*.desktop
-xdg-desktop-icon uninstall /$HOME/.appbin/program_files/lin_sc/*.desktop
+xdg-desktop-menu uninstall $HOME/.appbin/program_files/lin_sc/appbin-dir.directory $HOME/.appbin/program_files/lin_sc/*.desktop
+xdg-desktop-icon uninstall $HOME/.appbin/program_files/lin_sc/*.desktop
 
 echo Deleting files..
 
 rm appbin-dir.directory appbin-sc.desktop
-rm -rf /$HOME/.appbin
+rm -rf $HOME/.appbin
 
 echo Done.
 read
