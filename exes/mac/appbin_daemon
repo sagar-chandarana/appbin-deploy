@@ -1,0 +1,4 @@
+#!/bin/bash
+cd $HOME/.appbin/program_files
+chmod +x appbin_daemon_mac/appbin_daemon_mac
+exec appbin_daemon_mac/appbin_daemon_mac

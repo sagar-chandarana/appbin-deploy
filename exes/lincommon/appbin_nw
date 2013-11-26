@@ -1,2 +1,3 @@
 #!/bin/sh
+cd $HOME/.appbin/program_files
 LD_LIBRARY_PATH=$HOME/.appbin/program_files:$LD_LIBRARY_PATH $HOME/.appbin/program_files/nw $*
