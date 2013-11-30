@@ -1,0 +1,38 @@
+#!/bin/sh
+
+SCRIPT_PATH="${BASH_SOURCE[0]}";
+if ([ -h "${SCRIPT_PATH}" ]) then
+  while([ -h "${SCRIPT_PATH}" ]) do SCRIPT_PATH=`readlink "${SCRIPT_PATH}"`; done
+fi
+pushd . > /dev/null
+cd `dirname ${SCRIPT_PATH}` > /dev/null
+SCRIPT_PATH=`pwd`;
+
+
+echo Killing appbin processes..
+killall -9 appbin_daemon_mac
+killall -9 appbin_7z
+killall -9 appbin_nw_mac
+
+echo Moving files..
+mv $HOME/.appbin/program_files/apps $HOME/.appbin/apps
+rm -rf $HOME/.appbin/program_files
+mkdir -p $HOME/.appbin/program_files
+mv appbinpf/* $HOME/.appbin/program_files
+mv $HOME/.appbin/apps  $HOME/.appbin/program_files/apps
+
+echo Setting permissions..
+chmod +x -f $HOME/.appbin/program_files/appbin
+chmod +x -f $HOME/.appbin/program_files/appbin_nw
+chmod +x -f $HOME/.appbin/program_files/nw.app
+chmod +x -f $HOME/.appbin/program_files/appbin_daemon
+chmod +x -f $HOME/.appbin/program_files/bin/appbin_7za
+
+
+echo Creating Shortcuts..
+ln  $HOME/.appbin/program_files/appbin $HOME/Desktop/Appbin
+
+echo Starting Appbin..
+cd $HOME/.appbin/program_files
+./appbin_daemon &
+./appbin

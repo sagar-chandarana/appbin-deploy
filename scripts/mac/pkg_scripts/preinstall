@@ -1,0 +1,6 @@
+#!/bin/sh
+echo Killing appbin processes..
+killall -9 appbin_daemon_mac
+killall -9 appbin_7z
+killall -9 appbin_nw_mac
+

@@ -26,7 +26,7 @@ OutputBaseFilename=setup
 Compression=lzma
 SolidCompression=yes
 ;SourceDir="D:\DOCs\PersonalProjects\AppBin\Inno\0.02\files\appbin"
-SetupIconFile="D:\DOCs\PersonalProjects\AppBin\SyncingExp\gitRepo\appbin.ico"
+SetupIconFile="appbin.ico"
 
 ;To do
 
