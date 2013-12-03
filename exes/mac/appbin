@@ -1,0 +1,3 @@
+#!/bin/bash
+cd $HOME/.appbin/program_files/appbin_nw
+$HOME/.appbin/program_files/appbin_nw $HOME/.appbin/program_files/appbinnw --data-path=$HOME/.appbin/data/default
