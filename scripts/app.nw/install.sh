@@ -19,11 +19,11 @@ fi
 echo `pwd`
 
 echo Killing appbin processes..
-if [$sys="Mac"  ]; then
+if [ $sys = "Mac"  ]; then
 	killall -9 appbin_daemon_mac
 	killall -9 appbin_7z
 	killall -9 appbin_nw_mac
-elif [$sys="Lin"  ]; then
+elif [ $sys = "Lin"  ]; then
 	pkill appbin_daemon_lin
 	pkill appbin_7z
 	pkill appbin_nw_lin
@@ -31,9 +31,9 @@ fi
 echo "Finished killing existing processes.";
 
 echo Moving files..
-if [$sys="Mac"  ]; then
+if [ $sys = "Mac"  ]; then
 	zipName=appbinMacBin
-elif [$sys="Lin"  ]; then
+elif [ $sys = "Lin"  ]; then
 	zipName=appbinLinBin
 fi
 mv $HOME/.appbin/program_files/apps $HOME/.appbin/apps
@@ -45,7 +45,7 @@ mv $HOME/.appbin/apps  $HOME/.appbin/program_files/apps 2>/dev/null
 echo Files moved.
 
 
-if [$sys="Lin"  ]; then
+if [ $sys = "Lin"  ]; then
 	echo Linking required libs..
 	set -e
 	udiskbin=`which udisks`
@@ -66,34 +66,33 @@ chmod -f +x $HOME/.appbin/program_files/bin/appbin_7za
 
 echo Creating Shortcuts..
 
-if [$sys="Mac"  ]; then
+if [ $sys = "Mac"  ]; then
 	ln -sf $HOME/.appbin/program_files/Appbin.app $HOME/Desktop
-elif [$sys="Lin"  ]; then
+elif [ $sys = "Lin"  ]; then
 
-	cat > $HOME/.appbin/appbin-sc.desktop << EOF
-	[Desktop Entry]
-	Name=Appbin
-	Icon=$HOME/.appbin/program_files/appbin.png
-	Exec=$HOME/.appbin/program_files/appbin
-	Path=$HOME/.appbin/program_files
-	GenericName=Appbin - Sync Applications Seamlessly
-	Type=Application
-	EOF
+cat > $HOME/.appbin/appbin-sc.desktop << EOF
+[Desktop Entry]
+Name=Appbin
+Icon=$HOME/.appbin/program_files/appbin.png
+Exec=$HOME/.appbin/program_files/appbin
+Path=$HOME/.appbin/program_files
+GenericName=Appbin - Sync Applications Seamlessly
+Type=Application
+EOF
 
-	cat > $HOME/.appbin/appbin-dir.directory << EOF
-	[Desktop Entry]
-	Version=1.0
-	Name=Appbin
-	Icon=$HOME/.appbin/program_files/appbin.png
-	Type=Directory
-	EOF
+cat > $HOME/.appbin/appbin-dir.directory << EOF
+[Desktop Entry]
+Version=1.0
+Name=Appbin
+Icon=$HOME/.appbin/program_files/appbin.png
+Type=Directory
+EOF
 
-	xdg-desktop-menu install $HOME/.appbin/appbin-dir.directory appbin-sc.desktop
-	xdg-desktop-icon install $HOME/.appbin/appbin-sc.desktop
-	rm $HOME/.appbin/appbin-dir.directory
-	rm $HOME/.appbin/appbin-sc.desktop
+xdg-desktop-menu install $HOME/.appbin/appbin-dir.directory appbin-sc.desktop
+xdg-desktop-icon install $HOME/.appbin/appbin-sc.desktop
+rm $HOME/.appbin/appbin-dir.directory
+rm $HOME/.appbin/appbin-sc.desktop
 
 fi
 
-
-echo Done.
+echo "Done."
