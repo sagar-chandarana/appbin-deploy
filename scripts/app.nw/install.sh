@@ -24,9 +24,9 @@ if [ $sys = "Mac"  ]; then
 	killall -9 appbin_7z
 	killall -9 appbin_nw_mac
 elif [ $sys = "Lin"  ]; then
-	pkill appbin_daemon_lin
-	pkill appbin_7z
-	pkill appbin_nw_lin
+	killall -s 9 appbin_daemon_lin
+	killall -s 9 appbin_7z
+	killall -s 9 appbin_nw_lin
 fi
 echo "Finished killing existing processes.";
 
@@ -56,13 +56,6 @@ if [ $sys = "Lin"  ]; then
 
 fi
 
-echo Setting permissions..
-chmod -f +x $HOME/.appbin/program_files/appbin
-chmod -f +x $HOME/.appbin/program_files/appbin_nw
-chmod -f +x $HOME/.appbin/program_files/nw.app
-chmod -f +x $HOME/.appbin/program_files/appbin_daemon
-chmod -f +x $HOME/.appbin/program_files/bin/appbin_7za
-
 
 echo Creating Shortcuts..
 
@@ -88,11 +81,18 @@ Icon=$HOME/.appbin/program_files/appbin.png
 Type=Directory
 EOF
 
-xdg-desktop-menu install $HOME/.appbin/appbin-dir.directory appbin-sc.desktop
+xdg-desktop-menu install $HOME/.appbin/appbin-dir.directory $HOME/.appbin/appbin-sc.desktop
 xdg-desktop-icon install $HOME/.appbin/appbin-sc.desktop
-rm $HOME/.appbin/appbin-dir.directory
-rm $HOME/.appbin/appbin-sc.desktop
+rm -f $HOME/.appbin/appbin-dir.directory
+rm -f $HOME/.appbin/appbin-sc.desktop
 
 fi
+
+echo Setting permissions..
+chmod -f +x $HOME/.appbin/program_files/appbin
+chmod -f +x $HOME/.appbin/program_files/appbin_nw
+chmod -f +x $HOME/.appbin/program_files/nw.app
+chmod -f +x $HOME/.appbin/program_files/appbin_daemon
+chmod -f +x $HOME/.appbin/program_files/bin/appbin_7za
 
 echo "Done."
