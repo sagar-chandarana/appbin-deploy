@@ -1,0 +1,4 @@
+#!/bin/bash
+cd $HOME/.appbin/program_files
+chmod +x appbin_daemon_lin/appbin_daemon_lin
+exec appbin_daemon_lin/appbin_daemon_lin

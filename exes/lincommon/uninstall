@@ -1,8 +1,8 @@
 #!/bin/sh
 echo Killing appbin processes..
-pkill appbin_daemon
+pkill appbin_daemon_lin
 pkill appbin_7z
-pkill appbin_nw
+pkill appbin_nw_lin
 
 echo Deleting shortcuts..
 
