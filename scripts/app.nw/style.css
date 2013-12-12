@@ -9,7 +9,7 @@ body {
   padding: 0px;
 }
 
-textarea#textPolicy {
+#instText {
     
 	width: 460px;
 	height: 150px;
@@ -18,11 +18,11 @@ textarea#textPolicy {
     border: none;
 	margin-top:2%;
 	margin-left:2%;
-	font-family: Tahoma, sans-serif;
-	background-position: bottom right;
+    font-family: arial;
+    background-position: bottom right;
 	background-repeat: no-repeat;
 	resize: none;
-    font-size: 12px;
+    font-size: 13px;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -142,7 +142,7 @@ position:relative;
 top:1px;
 }
 
-div.inline { float:left; }
+div.inline { float:left;}
 
 #appbin-icon{
 

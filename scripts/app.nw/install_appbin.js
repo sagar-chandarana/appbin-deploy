@@ -11,7 +11,8 @@ function onInstallComplete(){
 	document.getElementById("install_appbin").value="Open Appbin";
 	document.getElementById( "install_appbin" ).setAttribute( "onClick", "onCloseClick();" )
 	disableExit(false);
-	changeTextArea("Installation complete.");
+	changeTextArea("Installation complete.<br><br><div class='inline' style=\"width:68%;\"><img src='open.png'/></div> <div class='inline' style=\"width:26%\">On the Desktop, right click or ctrl+click on Appbin -> Click Open.</div>");
+	
 }
 
 function onCloseClick(){
@@ -46,7 +47,7 @@ function installAppbin() {
 }
 
 function changeTextArea(newText) {
-   document.getElementById("textPolicy").value=newText;
+   document.getElementById("instText").innerHTML=newText;
 }
 
 function minimize() {
