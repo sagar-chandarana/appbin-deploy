@@ -4,8 +4,8 @@
   "main": "install_appbin.html",
   "window": {
     "show": true,
-    "toolbar": true,
-    "frame": true,
+    "toolbar": false,
+    "frame": false,
     "position": "center",
     "width": 550,
     "height": 300,
