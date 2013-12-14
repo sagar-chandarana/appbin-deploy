@@ -11,8 +11,10 @@ function onInstallComplete(){
 	document.getElementById("install_appbin").value="Open Appbin";
 	document.getElementById( "install_appbin" ).setAttribute( "onClick", "onCloseClick();" )
 	disableExit(false);
-	changeTextArea("Installation complete.<br><br><div class='inline' style=\"width:68%;\"><img src='open.png'/></div> <div class='inline' style=\"width:26%\">On the Desktop, right click or ctrl+click on Appbin -> Click Open.</div>");
-	
+	if (require('os').platform() == 'darwin' )
+		changeTextArea("Installation complete.<br><br><div class='inline' style=\"width:68%;\"><img src='open.png'/></div> <div class='inline' style=\"width:26%\">On the Desktop, right click or ctrl+click on Appbin -> Click Open.</div>");
+	else
+		changeTextArea("Installation complete.")
 }
 
 function onCloseClick(){
