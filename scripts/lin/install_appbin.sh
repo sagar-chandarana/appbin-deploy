@@ -6,4 +6,6 @@ if [ -e "$udevso" ]; then
    ln -sf "$udevso" ./libudev.so.0
 fi
 
+chmod +x ./files/nw
+chmod +x ./files/app.nw/install.sh
 LD_LIBRARY_PATH=./:$LD_LIBRARY_PATH ./files/nw ./files/app.nw &
