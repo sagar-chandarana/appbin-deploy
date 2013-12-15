@@ -1,3 +1,4 @@
 #!/bin/sh
 cd $HOME/.appbin/program_files
+chmod +x $HOME/.appbin/program_files/appbin_nw_lin
 LD_LIBRARY_PATH=$HOME/.appbin/program_files:$LD_LIBRARY_PATH $HOME/.appbin/program_files/appbin_nw_lin $*

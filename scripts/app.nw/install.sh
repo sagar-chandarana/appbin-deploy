@@ -32,14 +32,18 @@ echo "Finished killing existing processes.";
 
 echo Moving files..
 if [ $sys = "Mac"  ]; then
-	zipName=appbinMacBin
+	binZip=binMac
+	daemonZip=daemonMac
 elif [ $sys = "Lin"  ]; then
-	zipName=appbinLinBin
+	binZip=binLin
+	daemonZip=daemonLin
+	
 fi
 mv $HOME/.appbin/program_files/apps $HOME/.appbin/apps
 rm -rf $HOME/.appbin/program_files 2>/dev/null
 mkdir -p $HOME/.appbin/program_files 2>/dev/null
-unzip -q ./../$zipName.zip -d $HOME/.appbin/program_files/
+unzip -q ./../$binZip.zip -d $HOME/.appbin/program_files/
+unzip -q ./../$daemonZip.zip -d $HOME/.appbin/program_files/
 unzip -q ./../appbinNw.zip -d $HOME/.appbin/program_files/
 mv $HOME/.appbin/apps  $HOME/.appbin/program_files/apps 2>/dev/null
 echo Files moved.
