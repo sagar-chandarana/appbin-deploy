@@ -1,0 +1,20 @@
+#!/bin/sh
+
+rm -f builds/appbinNw.zip
+
+if [ "$(uname)" == "Darwin" ]; then
+	SCRIPT_PATH="${BASH_SOURCE[0]}";
+	if ([ -h "${SCRIPT_PATH}" ]) then
+		while([ -h "${SCRIPT_PATH}" ]) do SCRIPT_PATH=`readlink "${SCRIPT_PATH}"`; done
+	fi
+	pushd . > /dev/null
+	cd `dirname ${SCRIPT_PATH}` > /dev/null
+	SCRIPT_PATH=`pwd`;
+	
+    exes/mac/bin/appbin_7za  a -tzip ./builds/appbinNw.zip ../appbin/appbinnw ../appbin/launchernw ../appbin/online  -mx3
+	
+elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
+    
+	exes/lin32/bin/appbin_7za a -tzip ./builds/appbinNw.zip ../appbin/appbinnw ../appbin/launchernw ../appbin/online  -mx3
+
+fi
