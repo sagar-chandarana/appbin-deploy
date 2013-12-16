@@ -1,0 +1,5 @@
+Appbin v1.0
+
+Run the script install_appbin.sh to install Appbin. This will copy necessary files to ~/.appbin directory. Once installed, a desktop icon for Appbin will be created.
+
+Report bugs to sagar@getappbin.com. 
