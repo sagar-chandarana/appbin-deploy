@@ -95,7 +95,6 @@ fi
 echo Setting permissions..
 chmod -f +x $HOME/.appbin/program_files/appbin
 chmod -f +x $HOME/.appbin/program_files/appbin_nw
-chmod -f +x $HOME/.appbin/program_files/nw.app
 chmod -f +x $HOME/.appbin/program_files/appbin_daemon
 chmod -f +x $HOME/.appbin/program_files/bin/appbin_7za
 
